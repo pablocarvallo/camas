@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Registro de Jueves</title>
+    <title>Registro de Miércoles</title>
     
     <!-- Configuración PWA iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Jueves">
+    <meta name="apple-mobile-web-app-title" content="Miércoles">
     
     <!-- Configuración del Icono para iOS -->
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -127,7 +127,7 @@
     <header class="px-6 pt-4 pb-2 flex justify-between items-center z-10">
         <div>
             <!-- Se actualiza el título del registro -->
-            <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-wide">REGISTRO DE JUEVES</h2>
+            <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-wide">REGISTRO DE MIÉRCOLES</h2>
             <h1 class="text-3xl font-bold tracking-tight text-gray-900" id="appTitle">Cargando...</h1>
         </div>
         <button onclick="shareMonth()" class="ios-btn bg-white w-10 h-10 flex items-center justify-center rounded-full shadow-sm text-blue-500">
@@ -148,7 +148,7 @@
                 
                 <!-- Lista de Semanas -->
                 <div id="weeksList" class="space-y-3">
-                    <!-- Los jueves se generan con JS aquí -->
+                    <!-- Los miércoles se generan con JS aquí -->
                 </div>
             </div>
             
@@ -254,7 +254,7 @@
         // Modificada: Obtener todos los JUEVES de un mes específico
         function getThursdaysOfMonth(year, monthIndex) {
             // Usamos el día 4 para Jueves (0=Dom, 1=Lun, ..., 4=Jue)
-            const THURSDAY = 4;
+            const THURSDAY = 3;
             
             let d = new Date(year, monthIndex, 1);
             let thursdays = [];
@@ -312,7 +312,7 @@
             const currentMonth = now.getMonth(); // 0-11
 
             // Título principal
-            document.getElementById('appTitle').textContent = `Jueves de ${monthsEs[currentMonth]} ${currentYear}`;
+            document.getElementById('appTitle').textContent = `Miércoles de ${monthsEs[currentMonth]} ${currentYear}`;
             
             // Modificada: Obtener los jueves
             const thursdays = getThursdaysOfMonth(currentYear, currentMonth);
@@ -337,10 +337,10 @@
                 // Crear elemento HTML
                 const weekEl = document.createElement('div');
                 weekEl.className = 'ios-card p-4 flex justify-between items-center';
-                // Modificada: Texto para mostrar "Jueves [día], [Nombre]"
+                // Modificada: Texto para mostrar "Miércoles [día], [Nombre]"
                 weekEl.innerHTML = `
                     <div class="flex flex-col">
-                        <span class="text-gray-900 font-semibold text-lg">Jueves ${day.dayNum}, ${day.assignedName}</span>
+                        <span class="text-gray-900 font-semibold text-lg">Miércoles ${day.dayNum}, ${day.assignedName}</span>
                         <span class="text-gray-400 text-xs mt-0.5 font-medium">${monthsEs[currentMonth]} ${currentYear}</span>
                     </div>
                     <button onclick="toggleStatus('${day.dateStr}')" class="status-btn ${btnClass} shadow-sm active:scale-90">
@@ -425,7 +425,7 @@
                     // Modificada: Mostrar "Jueves [día], [Nombre]" en el historial
                     itemsHtml += `
                         <div class="flex items-center justify-between py-3 border-b border-gray-100 last:border-0">
-                            <span class="text-gray-700 font-medium">Jueves ${parseInt(dayDisplay)}, ${item.assignedName}</span>
+                            <span class="text-gray-700 font-medium">Miércoles ${parseInt(dayDisplay)}, ${item.assignedName}</span>
                             <div class="flex items-center gap-2 ${statusColor} px-2 py-1 rounded-lg text-xs font-bold uppercase tracking-wider">
                                 ${statusText}
                                 ${statusIcon}
